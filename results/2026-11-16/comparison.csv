@@ -1,0 +1,8 @@
+﻿model,vad,historical_cer_percent,rerun_cer_percent,rounded_cer_match,historical_exact_sentences,rerun_exact_sentences,exact_count_match,historical_speed,rerun_speed
+Whisper large-v3,off,12.7,12.698412698412698,True,27,27,True,5.56,4.229199559021229
+Whisper large-v3,on,11.11,11.11111111111111,True,29,29,True,5.58,4.306069579579853
+Whisper large-v3-turbo,off,1.98,1.984126984126984,True,28,28,True,11.46,9.829524118393088
+Whisper large-v3-turbo,on,2.78,2.7777777777777777,True,27,27,True,13.53,8.966687827199129
+Qwen3-ASR 0.6B,not_controlled,1.98,1.984126984126984,True,31,31,True,1.84,1.6375928864918965
+Qwen3-ASR 1.7B,not_controlled,1.19,1.1904761904761905,True,32,32,True,2.39,1.8182192864710511
+Nemotron 3.5 ASR 0.6B,not_controlled,11.11,11.11111111111111,True,14,14,True,1.69,1.3850760436518044

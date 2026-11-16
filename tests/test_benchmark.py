@@ -1,4 +1,5 @@
 import csv
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -69,6 +70,29 @@ class RunnerTests(unittest.TestCase):
 
 
 class PublishedResultsTests(unittest.TestCase):
+    def test_gpu_rerun_publication_matches_execution_manifest(self):
+        directory = ROOT / "results" / "2026-11-16"
+        data = json.loads((directory / "results.json").read_text())
+        manifest = json.loads((directory / "execution-manifest.json").read_text())
+        with (directory / "results.csv").open(encoding="utf-8-sig") as stream:
+            csv_rows = list(csv.DictReader(stream))
+        self.assertEqual(manifest["status"], "complete")
+        self.assertEqual(len(manifest["runs"]), 7)
+        self.assertEqual(len(data["results"]), 7)
+        self.assertEqual(len(csv_rows), 7)
+        for row, csv_row, run in zip(data["results"], csv_rows, manifest["runs"]):
+            self.assertEqual(run["exit_code"], 0)
+            self.assertEqual(row["model"], run["result"]["model"])
+            self.assertEqual(row["edit_errors"], run["result"]["edit_errors"])
+            self.assertEqual(row["reference_characters"], 504)
+            self.assertEqual(row["sentences"], 36)
+            self.assertAlmostEqual(row["cer_percent"], row["edit_errors"] / 504 * 100)
+            self.assertEqual(row["exact_sentences"], run["result"]["exact_sentences"])
+            for key, value in row.items():
+                self.assertEqual(float(csv_row[key]) if isinstance(value, (float, int)) else csv_row[key], value)
+        for name, digest in manifest["source_sha256"].items():
+            self.assertEqual(hashlib.sha256((ROOT / "scripts" / name).read_bytes()).hexdigest(), digest)
+
     def test_historical_csv_and_json_match(self):
         directory = ROOT / "results" / "2026-11-06"
         data = json.loads((directory / "results.json").read_text())

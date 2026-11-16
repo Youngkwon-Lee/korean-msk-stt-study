@@ -1,0 +1,481 @@
+{
+  "started_at": "2026-11-16T12:46:21.307254+00:00",
+  "status": "complete",
+  "physical_gpu": 1,
+  "initial_gpu": {
+    "name": "Quadro RTX 5000",
+    "driver": "572.60",
+    "total_mib": 16384,
+    "used_mib": 524,
+    "utilization_percent": 0
+  },
+  "input_sha256": "80f76331e35ae2fe611654af70e3adfc55f73c1d9a1e7316dffcdaa043f16ed3",
+  "input_hash_algorithm": "sorted WAV/TXT filename UTF8 + binary SHA256(file), then SHA256",
+  "sample_pairs": 36,
+  "audio_seconds": 149.03999999999996,
+  "reference_characters": 504,
+  "source_sha256": {
+    "benchmark.py": "8a076af840e629ae2dec33c7765bb341d636916836cc7e75e746a5e60ea2f3ee",
+    "metrics.py": "8312183c7ccc9705af4fbeaf2a2db1dddc5613d999117e40e39c5ffed7d77ad3",
+    "model_backends.py": "0d58cbbed5d91cd5604194f75b035f623487b43babaf1f92a048f09df105f705",
+    "run_suite.py": "c53cc8d92d9d14b6aea89f679606fb3b8fc766a9442bb7e0300cbe19e2b483b8"
+  },
+  "runtimes": {
+    "whisper": {
+      "python": "3.11.14",
+      "packages": {
+        "faster-whisper": "1.2.1",
+        "ctranslate2": "4.8.5",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "nvidia-cudnn-cu12": "9.27.0.42",
+        "nvidia-cublas-cu12": "12.9.3.13"
+      }
+    },
+    "qwen": {
+      "python": "3.11.14",
+      "packages": {
+        "torch": "2.9.1+cu128",
+        "torchaudio": "2.9.1+cu128",
+        "transformers": "4.57.6",
+        "qwen-asr": "0.0.6",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "nvidia-cudnn-cu12": "9.10.2.21",
+        "nvidia-cublas-cu12": "12.8.4.1"
+      }
+    },
+    "nemotron": {
+      "python": "3.11.14",
+      "packages": {
+        "torch": "2.9.1+cu128",
+        "torchaudio": "2.9.1+cu128",
+        "transformers": "5.22.1",
+        "nemo_toolkit": "3.0.0",
+        "omegaconf": "2.3.0",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "nvidia-cudnn-cu12": "9.10.2.21",
+        "nvidia-cublas-cu12": "12.8.4.1"
+      }
+    }
+  },
+  "model_artifacts": {
+    "Whisper large-v3": [
+      {
+        "file": "README.md",
+        "bytes": 2052,
+        "sha256": "39e96252229f5a3d0141dc81afb65a36fd205461ac21e5b70f2cd1248ef0082c"
+      },
+      {
+        "file": "config.json",
+        "bytes": 2394,
+        "sha256": "a9306624f5ec14270a014b647e5c316b6e03a662c369758d1b90697a7b0655b9"
+      },
+      {
+        "file": "model.bin",
+        "bytes": 3087284237,
+        "sha256": "69f74147e3334731bc3a76048724833325d2ec74642fb52620eda87352e3d4f1"
+      },
+      {
+        "file": "preprocessor_config.json",
+        "bytes": 340,
+        "sha256": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711"
+      },
+      {
+        "file": "tokenizer.json",
+        "bytes": 2480617,
+        "sha256": "6d8cbd7cd0d8d5815e478dac67b85a26bbe77c1f5e0c6d76d1ce2abc0e5f21ca"
+      },
+      {
+        "file": "vocabulary.json",
+        "bytes": 1068114,
+        "sha256": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+      }
+    ],
+    "Whisper large-v3-turbo": [
+      {
+        "file": "README.md",
+        "bytes": 1445,
+        "sha256": "b3068692728faed23580cce5cd569fc47ff76c690c032b2641ffd5554ea64d8f"
+      },
+      {
+        "file": "config.json",
+        "bytes": 2263,
+        "sha256": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e"
+      },
+      {
+        "file": "model.bin",
+        "bytes": 1617884929,
+        "sha256": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da"
+      },
+      {
+        "file": "preprocessor_config.json",
+        "bytes": 340,
+        "sha256": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711"
+      },
+      {
+        "file": "tokenizer.json",
+        "bytes": 2710337,
+        "sha256": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd"
+      },
+      {
+        "file": "vocabulary.json",
+        "bytes": 1068114,
+        "sha256": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1"
+      }
+    ],
+    "Qwen3-ASR 0.6B": [
+      {
+        "file": "README.md",
+        "bytes": 57456,
+        "sha256": "5058416891bc47a2051557765997e8c42f8eb78a0e33c3e775bd17d4b0ba4d50"
+      },
+      {
+        "file": "chat_template.json",
+        "bytes": 1161,
+        "sha256": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff"
+      },
+      {
+        "file": "config.json",
+        "bytes": 6193,
+        "sha256": "76d3ae4601ce939830b2517f4a6cadb86cc51316c3900af6b020b051c21a478c"
+      },
+      {
+        "file": "generation_config.json",
+        "bytes": 142,
+        "sha256": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c"
+      },
+      {
+        "file": "merges.txt",
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      {
+        "file": "model.safetensors",
+        "bytes": 1876091704,
+        "sha256": "79d6cbd4c98c7bbffe9db2edac07f56cd6637d0d5944b27f6c2b8353840323ea"
+      },
+      {
+        "file": "preprocessor_config.json",
+        "bytes": 330,
+        "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d"
+      },
+      {
+        "file": "tokenizer_config.json",
+        "bytes": 12487,
+        "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c"
+      },
+      {
+        "file": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ],
+    "Qwen3-ASR 1.7B": [
+      {
+        "file": "README.md",
+        "bytes": 57456,
+        "sha256": "5058416891bc47a2051557765997e8c42f8eb78a0e33c3e775bd17d4b0ba4d50"
+      },
+      {
+        "file": "chat_template.json",
+        "bytes": 1161,
+        "sha256": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff"
+      },
+      {
+        "file": "config.json",
+        "bytes": 6194,
+        "sha256": "2e74a751548b8ad7d7526d29365ad8144c345d8b412b1152d25dc6698452712f"
+      },
+      {
+        "file": "generation_config.json",
+        "bytes": 142,
+        "sha256": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c"
+      },
+      {
+        "file": "merges.txt",
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      {
+        "file": "model-00001-of-00002.safetensors",
+        "bytes": 4220320824,
+        "sha256": "a4cd1f1a04d90b757dc7f7dd26254e69a013b19e80efe590a83c6a3bde8608d6"
+      },
+      {
+        "file": "model-00002-of-00002.safetensors",
+        "bytes": 478200688,
+        "sha256": "6e0b9d9e09e2e0238e7ef3cc8a484ab387e91b90f1900bedf88bc92d7929ccfc"
+      },
+      {
+        "file": "model.safetensors.index.json",
+        "bytes": 64821,
+        "sha256": "f994739fe38e5210b9e3e8ce6c6307315e2ceac3cb630e7b7414d69dce520f60"
+      },
+      {
+        "file": "preprocessor_config.json",
+        "bytes": 330,
+        "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d"
+      },
+      {
+        "file": "tokenizer_config.json",
+        "bytes": 12487,
+        "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c"
+      },
+      {
+        "file": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ],
+    "Nemotron 3.5 ASR 0.6B": [
+      {
+        "file": "nemotron-3.5-asr-streaming-0.6b.nemo",
+        "bytes": 2368284501,
+        "sha256": "210214ed94039bf6bfbb9a047c7fa289628db75b103e2bf6381fa78285436a74"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "model": "Whisper large-v3",
+      "vad_requested": false,
+      "started_at": "2026-11-16T12:46:35.573311+00:00",
+      "gpu_preflight": {
+        "name": "Quadro RTX 5000",
+        "driver": "572.60",
+        "total_mib": 16384,
+        "used_mib": 524,
+        "utilization_percent": 0
+      },
+      "finished_at": "2026-11-16T12:47:30.023466+00:00",
+      "exit_code": 0,
+      "result": {
+        "cer": 0.12698412698412698,
+        "cer_by_group": {
+          "patient": 0.2604166666666667,
+          "staff": 0.04487179487179487
+        },
+        "exact_sentences": 27,
+        "sentences": 36,
+        "edit_errors": 64,
+        "reference_characters": 504,
+        "audio_seconds": 149.03999999999996,
+        "transcribe_seconds": 35.240711136953905,
+        "audio_seconds_per_processing_second": 4.229199559021229,
+        "model": "Whisper large-v3",
+        "family": "whisper",
+        "load_seconds": 8.960493755002972,
+        "vad": "off",
+        "sampled_gpu_memory_peak_mib": 4013,
+        "output_metadata_removed": null
+      }
+    },
+    {
+      "model": "Whisper large-v3",
+      "vad_requested": true,
+      "started_at": "2026-11-16T12:47:30.106520+00:00",
+      "gpu_preflight": {
+        "name": "Quadro RTX 5000",
+        "driver": "572.60",
+        "total_mib": 16384,
+        "used_mib": 524,
+        "utilization_percent": 0
+      },
+      "finished_at": "2026-11-16T12:48:17.026427+00:00",
+      "exit_code": 0,
+      "result": {
+        "cer": 0.1111111111111111,
+        "cer_by_group": {
+          "patient": 0.09895833333333333,
+          "staff": 0.11858974358974358
+        },
+        "exact_sentences": 29,
+        "sentences": 36,
+        "edit_errors": 56,
+        "reference_characters": 504,
+        "audio_seconds": 149.03999999999996,
+        "transcribe_seconds": 34.611609786050394,
+        "audio_seconds_per_processing_second": 4.306069579579853,
+        "model": "Whisper large-v3",
+        "family": "whisper",
+        "load_seconds": 6.945850425050594,
+        "vad": "on",
+        "sampled_gpu_memory_peak_mib": 4013,
+        "output_metadata_removed": null
+      }
+    },
+    {
+      "model": "Whisper large-v3-turbo",
+      "vad_requested": false,
+      "started_at": "2026-11-16T12:48:29.308030+00:00",
+      "gpu_preflight": {
+        "name": "Quadro RTX 5000",
+        "driver": "572.60",
+        "total_mib": 16384,
+        "used_mib": 524,
+        "utilization_percent": 0
+      },
+      "finished_at": "2026-11-16T12:48:51.807564+00:00",
+      "exit_code": 0,
+      "result": {
+        "cer": 0.01984126984126984,
+        "cer_by_group": {
+          "patient": 0.036458333333333336,
+          "staff": 0.009615384615384616
+        },
+        "exact_sentences": 28,
+        "sentences": 36,
+        "edit_errors": 10,
+        "reference_characters": 504,
+        "audio_seconds": 149.03999999999996,
+        "transcribe_seconds": 15.162483778956812,
+        "audio_seconds_per_processing_second": 9.829524118393088,
+        "model": "Whisper large-v3-turbo",
+        "family": "whisper",
+        "load_seconds": 4.468487615988124,
+        "vad": "off",
+        "sampled_gpu_memory_peak_mib": 2477,
+        "output_metadata_removed": null
+      }
+    },
+    {
+      "model": "Whisper large-v3-turbo",
+      "vad_requested": true,
+      "started_at": "2026-11-16T12:48:51.909697+00:00",
+      "gpu_preflight": {
+        "name": "Quadro RTX 5000",
+        "driver": "572.60",
+        "total_mib": 16384,
+        "used_mib": 524,
+        "utilization_percent": 0
+      },
+      "finished_at": "2026-11-16T12:49:14.435838+00:00",
+      "exit_code": 0,
+      "result": {
+        "cer": 0.027777777777777776,
+        "cer_by_group": {
+          "patient": 0.052083333333333336,
+          "staff": 0.01282051282051282
+        },
+        "exact_sentences": 27,
+        "sentences": 36,
+        "edit_errors": 14,
+        "reference_characters": 504,
+        "audio_seconds": 149.03999999999996,
+        "transcribe_seconds": 16.621522112982348,
+        "audio_seconds_per_processing_second": 8.966687827199129,
+        "model": "Whisper large-v3-turbo",
+        "family": "whisper",
+        "load_seconds": 4.904106512025464,
+        "vad": "on",
+        "sampled_gpu_memory_peak_mib": 2477,
+        "output_metadata_removed": null
+      }
+    },
+    {
+      "model": "Qwen3-ASR 0.6B",
+      "vad_requested": false,
+      "started_at": "2026-11-16T12:49:47.914037+00:00",
+      "gpu_preflight": {
+        "name": "Quadro RTX 5000",
+        "driver": "572.60",
+        "total_mib": 16384,
+        "used_mib": 524,
+        "utilization_percent": 0
+      },
+      "finished_at": "2026-11-16T12:52:41.813140+00:00",
+      "exit_code": 0,
+      "result": {
+        "cer": 0.01984126984126984,
+        "cer_by_group": {
+          "patient": 0.046875,
+          "staff": 0.003205128205128205
+        },
+        "exact_sentences": 31,
+        "sentences": 36,
+        "edit_errors": 10,
+        "reference_characters": 504,
+        "audio_seconds": 149.03999999999996,
+        "transcribe_seconds": 91.0116312970058,
+        "audio_seconds_per_processing_second": 1.6375928864918965,
+        "model": "Qwen3-ASR 0.6B",
+        "family": "qwen",
+        "load_seconds": 55.403812632954214,
+        "vad": "not_controlled",
+        "sampled_gpu_memory_peak_mib": 2519,
+        "output_metadata_removed": null
+      }
+    },
+    {
+      "model": "Qwen3-ASR 1.7B",
+      "vad_requested": false,
+      "started_at": "2026-11-16T12:54:11.677487+00:00",
+      "gpu_preflight": {
+        "name": "Quadro RTX 5000",
+        "driver": "572.60",
+        "total_mib": 16384,
+        "used_mib": 524,
+        "utilization_percent": 0
+      },
+      "finished_at": "2026-11-16T12:56:00.282460+00:00",
+      "exit_code": 0,
+      "result": {
+        "cer": 0.011904761904761904,
+        "cer_by_group": {
+          "patient": 0.020833333333333332,
+          "staff": 0.00641025641025641
+        },
+        "exact_sentences": 32,
+        "sentences": 36,
+        "edit_errors": 6,
+        "reference_characters": 504,
+        "audio_seconds": 149.03999999999996,
+        "transcribe_seconds": 81.97031079197768,
+        "audio_seconds_per_processing_second": 1.8182192864710511,
+        "model": "Qwen3-ASR 1.7B",
+        "family": "qwen",
+        "load_seconds": 17.47459069598699,
+        "vad": "not_controlled",
+        "sampled_gpu_memory_peak_mib": 5223,
+        "output_metadata_removed": null
+      }
+    },
+    {
+      "model": "Nemotron 3.5 ASR 0.6B",
+      "vad_requested": false,
+      "started_at": "2026-11-16T12:56:17.849530+00:00",
+      "gpu_preflight": {
+        "name": "Quadro RTX 5000",
+        "driver": "572.60",
+        "total_mib": 16384,
+        "used_mib": 524,
+        "utilization_percent": 0
+      },
+      "finished_at": "2026-11-16T13:00:53.199019+00:00",
+      "exit_code": 0,
+      "result": {
+        "cer": 0.1111111111111111,
+        "cer_by_group": {
+          "patient": 0.11979166666666667,
+          "staff": 0.10576923076923077
+        },
+        "exact_sentences": 14,
+        "sentences": 36,
+        "edit_errors": 56,
+        "reference_characters": 504,
+        "audio_seconds": 149.03999999999996,
+        "transcribe_seconds": 107.60420027701184,
+        "audio_seconds_per_processing_second": 1.3850760436518044,
+        "model": "Nemotron 3.5 ASR 0.6B",
+        "family": "nemotron",
+        "load_seconds": 141.33875636098674,
+        "vad": "not_controlled",
+        "sampled_gpu_memory_peak_mib": 3411,
+        "output_metadata_removed": "terminal <ko-KR>"
+      }
+    }
+  ],
+  "finished_at": "2026-11-16T13:00:53.278961+00:00"
+}

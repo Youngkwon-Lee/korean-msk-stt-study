@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-11-16T13:05:37.790289+00:00",
+  "local_input_files_removed": 72,
+  "local_input_directory_absent": true,
+  "local_transfer_archives_and_key_absent": true,
+  "remote_input_files_removed": 72,
+  "remote_input_directory_absent": true,
+  "remote_transfer_artifacts_and_key_absent": true,
+  "temporary_dependency_links_removed": true,
+  "encrypted_drive_copy_deleted_and_not_found_verified": true,
+  "shared_gpu_lock_released_and_available_at_observation": true,
+  "physical_gpu": 1,
+  "final_gpu_memory_used_mib": 524,
+  "final_gpu_utilization_percent": 0
+}
