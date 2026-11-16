@@ -1,0 +1,24 @@
+﻿field,type,definition,rule
+encounter_code,string,고유 상담 연구 코드,환자 식별자와 대응표는 별도 승인 저장소
+site_code,categorical,기관 연구 코드,실제 기관명은 별도 관리
+therapist_code,string,담당 치료사 연구 코드,군집 분석용
+duration_seconds,number,실제 분석 음성 길이,0 초과
+model_blind_code,categorical,눈가림 모델 코드 A/B,키는 평가 종료 전 제한
+model_revision_ref,string,잠긴 실행 manifest 참조,모델명은 눈가림용 평가 화면에서 제외
+technical_failure,boolean,재시도 규칙 후 전사 미제공,임상 판정 오류와 별도 보고
+important_semantic_error,boolean,의미가 달라지는 중요 오류 존재,합의 전 평가자별 값 보존
+primary_problem,boolean,중요 의미 오류 또는 기술적 실패,사전 규칙으로 파생
+information_unit_code,string,기준 전사의 중요 정보 단위 코드,존재하는 발화만 포함
+error_code,string,한 오류에 하나의 고유 코드,여러 범주 태그 가능; 수 중복 합산 금지
+error_operation,categorical,누락/대체/추가,원형과 기준자료 대조
+error_domains,set,부위/좌우/수치단위/부정조건/시점경과/발화자/환각,복수 태그
+clinically_important,boolean,사전 지침에 따른 임상 중요성,잠재 영향과 관측 위해 구별
+reviewer_code,string,독립 임상 평가자 연구 코드,본인 평가·타인 평가 구별
+adjudication,categorical,일치/합의/제3자중재/해석불가,합의 전 판단 보존
+editing_reviewer_code,string,수정 과제 평가자 코드,동일 상담 양 모델 중복 노출 방지
+active_editing_seconds,number,원음 확인과 수정의 활성 시간,외부 중단 시간 별도 기록
+interruption_seconds,number,외부 업무 중단 시간,사전 처리 규칙 적용
+residual_important_error,boolean,수정 후 독립검토에서 잔여 중요 오류,수정자 본인의 최종 판정으로 대체하지 않음
+noise_condition,categorical,파일럿에서 잠근 환경 분류,연속 음질지표가 있으면 함께 기록
+overlap_present,boolean,동시발화 구간 존재,배제 사유로 사후 사용 금지
+eligibility_exclusion_reason,categorical,사전 정의한 모델 무관 제외 사유,모델 결과 보기 전에 결정

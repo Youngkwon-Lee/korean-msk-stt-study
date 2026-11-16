@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite this repository as a draft research protocol and reconstructed benchmark toolkit, not as a peer-reviewed clinical validation."
+title: "Korean MSK STT Study: Protocol, Pilot Forms and Aggregate Benchmark"
+authors:
+  - family-names: Lee
+    given-names: Youngkwon
+version: 0.1.0
+date-released: 2026-11-16
+repository-code: "https://github.com/Youngkwon-Lee/korean-msk-stt-study"
+type: software

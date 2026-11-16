@@ -1,0 +1,96 @@
+{
+  "experiment_date": "2026-11-06",
+  "report_date": "2026-11-16",
+  "provenance": "Historical aggregate reconstructed from retained execution outputs; original per-utterance outputs and environment locks are not included. Published benchmark code is a portable reconstruction, not a re-execution of these results.",
+  "sample_pairs": 36,
+  "gpu": "Quadro RTX 5000 16 GiB",
+  "results": [
+    {
+      "model": "Whisper large-v3",
+      "vad": "off",
+      "cer_percent": 12.7,
+      "patient_cer_percent": 26.04,
+      "staff_cer_percent": 4.49,
+      "exact_sentences": 27,
+      "sentences": 36,
+      "audio_seconds_per_processing_second": 5.56,
+      "sampled_gpu_memory_peak_mib": 3510
+    },
+    {
+      "model": "Whisper large-v3",
+      "vad": "on",
+      "cer_percent": 11.11,
+      "patient_cer_percent": 9.9,
+      "staff_cer_percent": 11.86,
+      "exact_sentences": 29,
+      "sentences": 36,
+      "audio_seconds_per_processing_second": 5.58,
+      "sampled_gpu_memory_peak_mib": 3542
+    },
+    {
+      "model": "Whisper large-v3-turbo",
+      "vad": "off",
+      "cer_percent": 1.98,
+      "patient_cer_percent": 3.65,
+      "staff_cer_percent": 0.96,
+      "exact_sentences": 28,
+      "sentences": 36,
+      "audio_seconds_per_processing_second": 11.46,
+      "sampled_gpu_memory_peak_mib": 1974
+    },
+    {
+      "model": "Whisper large-v3-turbo",
+      "vad": "on",
+      "cer_percent": 2.78,
+      "patient_cer_percent": 5.21,
+      "staff_cer_percent": 1.28,
+      "exact_sentences": 27,
+      "sentences": 36,
+      "audio_seconds_per_processing_second": 13.53,
+      "sampled_gpu_memory_peak_mib": 1974
+    },
+    {
+      "model": "Qwen3-ASR 0.6B",
+      "vad": "not_controlled",
+      "cer_percent": 1.98,
+      "patient_cer_percent": 4.69,
+      "staff_cer_percent": 0.32,
+      "exact_sentences": 31,
+      "sentences": 36,
+      "audio_seconds_per_processing_second": 1.84,
+      "sampled_gpu_memory_peak_mib": 2016
+    },
+    {
+      "model": "Qwen3-ASR 1.7B",
+      "vad": "not_controlled",
+      "cer_percent": 1.19,
+      "patient_cer_percent": 2.08,
+      "staff_cer_percent": 0.64,
+      "exact_sentences": 32,
+      "sentences": 36,
+      "audio_seconds_per_processing_second": 2.39,
+      "sampled_gpu_memory_peak_mib": 4720
+    },
+    {
+      "model": "Nemotron 3.5 ASR 0.6B",
+      "vad": "not_controlled",
+      "cer_percent": 11.11,
+      "patient_cer_percent": 11.98,
+      "staff_cer_percent": 10.58,
+      "exact_sentences": 14,
+      "sentences": 36,
+      "audio_seconds_per_processing_second": 1.69,
+      "sampled_gpu_memory_peak_mib": 2908
+    }
+  ],
+  "notes": [
+    "CER values are percentages rounded to two decimal places, not semantic accuracy.",
+    "Speed excludes model load time.",
+    "GPU memory is total physical GPU memory sampled at one-second intervals, not exact per-process peak.",
+    "Nemotron terminal language metadata <ko-KR> removed before the common normalization.",
+    "VAD on/off was controlled only for Whisper. not_controlled does not mean disabled.",
+    "Source audio and full transcripts are not included.",
+    "Remote sample deletion was verified on 2026-11-06; not rechecked on report date.",
+    "No actual application integration or long recording validation is claimed."
+  ]
+}
