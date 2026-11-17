@@ -60,4 +60,20 @@ python3 -B scripts/analyze_manifest.py \
 
 누락·처리 중인 항목은 완료 집계로 내보낼 수 없다. 전체 실패율, 공통 성공 집합의 대응 CER, 실패를 정답 전체 삭제로 가정한 민감도 값을 구분한다. 문구별 대응 재표집은 미확인 화자 의존성을 보정하지 못한다. 모집단 p값·임상 안전성·미평가 용어 오류 0건을 생성하지 않는다. 출력은 공개 후보이므로 내용 검토 뒤 집계만 명시적으로 공개한다.
 
-현재 미완료: 화자 메타데이터·확대 이용 조건·300개 원음–정답 검토·1,800개 원음 해시와 추론·용어/임상 의미 주석·실제 모델 환경의 재개 동작. 합성 테스트는 모델 정확도나 공급자 과금 내역을 검증하지 않는다.
+초기 준비 이후 확대 이용 허용을 확인하고, 원음 해시 검증·[1,800건 정확도와 직렬 120건](../results/2026-11-18-expanded/README.md)을 완료했다. 화자 메타데이터·300개 원음–정답 검토·문맥/임상 의미 주석·실제 중단 후 재개 장애 주입 검증은 미완료다. 합성 재개 테스트와 실제 모델 추론 완료 증거를 구분한다.
+
+## 실제 확대 실행 v0.2a
+
+[실행 변경 기록](execution-amendment-v0.2a.md)에 따라 `run_expanded.py`는 정확도 단계(API 동시 요청 4개 / Qwen 오프라인 배치 4개)와 미리 선정한 120개 직렬 단계를 분리한다. 기존 `run_manifest.py`는 직렬 HTTP 실행용으로 유지한다.
+
+```sh
+python3 -B scripts/run_expanded.py \
+  --manifest private-runs/run-ready-manifest.json --expected-manifest-sha256 RUN_MANIFEST_SHA256 \
+  --audio-root /path/to/authorized/wav --annotations /path/to/private/frozen-annotations.json \
+  --provider gpt-transcribe --workers 4 --external-audio-use-authorized \
+  --private-out private-runs/gpt-expanded
+```
+
+Qwen은 `--provider qwen-local --batch-size 4 --service-source /path/to/existing-service-source --qwen-model /path/to/local-weights --gpu 1 --lock /path/to/existing-slot-1.lock`을 사용한다. 기존 환경과 임대를 사용하며 설치·모델 다운로드를 하지 않는다. 30초 초과 파일은 기존 서비스의 공통 분할·병합 규칙을 유지한다.
+
+`score_expanded.py`는 완료된 정확도/직렬 영수증을 읽어 문자 오류와 사전의 문자열 보존을 채점한다. 정답·전사 대신 명세 순서의 **비공개 수치 벡터**를 교환해 대응 집계를 할 수 있다. 모델 식별자/입력/주석/분모가 다르거나 영수증이 부족하면 중단한다. 수치 벡터도 개별 결과이므로 공개하지 않는다. 공개 후보에는 전체·역할 라벨별·사전 범주별 집계와 문구별 대응 민감도 범위만 포함한다.

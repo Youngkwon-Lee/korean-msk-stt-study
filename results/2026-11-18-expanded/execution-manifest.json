@@ -1,0 +1,125 @@
+{
+  "api_client_python": "3.15.2",
+  "source_commit": "87c5ea1",
+  "api_completed_receipts": 1920,
+  "post_api_input_sha256_verified": 1800,
+  "audio_source_format": {
+    "sample_rate": 48000,
+    "channels": 1,
+    "sample_width_bytes": 2
+  },
+  "unique_audio_sha256": 1800,
+  "total_audio_seconds": 6501.18,
+  "source_reference_review_completed": false,
+  "clinical_semantic_review_completed": false,
+  "analysis_source_sha256": {
+    "score_expanded.py": "6112027996b2b622f5b45e0a7a2ba9d7b6c36dffc967bda5fc8d8d8c0b7cee08",
+    "clinical_terms.py": "72fbb502ef4b50e29756df53ed551984f496cfafb4b247362e85cf8de7a7db4c",
+    "metrics.py": "8312183c7ccc9705af4fbeaf2a2db1dddc5613d999117e40e39c5ffed7d77ad3"
+  },
+  "run_manifest_sha256": "f2e2310db7318d4e21d65ea3b52384db7ed34bee9e1dc2a6d92562c61feb087e",
+  "selection_manifest_sha256": "dcfdcac189d11835d0ed28efbf6be3edaeb755a8d321d7b84712ef6b2758b624",
+  "annotation_sha256": "9aca48fd818ff36cdf859ffe331a31c111d109c2919c00c57ba4a53280cc06b1",
+  "qwen_accuracy_successful": 1800,
+  "qwen_serial_latency_successful": 120,
+  "transfer_verified": {
+    "verified_audio_samples": 1800,
+    "manifest_sha256": "f2e2310db7318d4e21d65ea3b52384db7ed34bee9e1dc2a6d92562c61feb087e",
+    "bytes": 624253680,
+    "status": "verified"
+  },
+  "source_hashes": {
+    "score_expanded.py": "6112027996b2b622f5b45e0a7a2ba9d7b6c36dffc967bda5fc8d8d8c0b7cee08",
+    "clinical_terms.py": "72fbb502ef4b50e29756df53ed551984f496cfafb4b247362e85cf8de7a7db4c",
+    "metrics.py": "8312183c7ccc9705af4fbeaf2a2db1dddc5613d999117e40e39c5ffed7d77ad3"
+  },
+  "models": {
+    "gpt_transcribe": {
+      "provider": "gpt-transcribe",
+      "condition_id": "expanded-v0.2a",
+      "annotation_sha256": "9aca48fd818ff36cdf859ffe331a31c111d109c2919c00c57ba4a53280cc06b1",
+      "api_settings": {
+        "model": "gpt-transcribe",
+        "languages[]": "ko",
+        "response_format": "json"
+      },
+      "accuracy_workers": 4,
+      "source_sha256": {
+        "run_expanded.py": "dbf5a3fbe457324ba3350565df241c12af6f6880416d70266b926f3fc76f0a99",
+        "run_manifest.py": "58fe2e19bab34ca52e4319f9c56a20a5769fe98e12207edd4c6f6f366b31c9b2",
+        "compare_api.py": "023c8bac70ded3161de3d22bcabfb42ba9ac136ce4d0f726e5978254573f5fa0",
+        "metrics.py": "8312183c7ccc9705af4fbeaf2a2db1dddc5613d999117e40e39c5ffed7d77ad3"
+      }
+    },
+    "qwen_1_7b": {
+      "provider": "qwen-local",
+      "condition_id": "expanded-v0.2a",
+      "annotation_sha256": "9aca48fd818ff36cdf859ffe331a31c111d109c2919c00c57ba4a53280cc06b1",
+      "accuracy_batch_size": 4,
+      "precision": "float16",
+      "attention": "eager",
+      "max_new_tokens": 1024,
+      "language": "Korean",
+      "chunk_seconds": 30,
+      "package_versions": {
+        "torch": "2.9.1+cu128",
+        "transformers": "4.57.6",
+        "numpy": "2.4.6",
+        "av": "18.1.0"
+      },
+      "model_file_sha256": {
+        "config.json": "2e74a751548b8ad7d7526d29365ad8144c345d8b412b1152d25dc6698452712f",
+        "model-00001-of-00002.safetensors": "a4cd1f1a04d90b757dc7f7dd26254e69a013b19e80efe590a83c6a3bde8608d6",
+        "model-00002-of-00002.safetensors": "6e0b9d9e09e2e0238e7ef3cc8a484ab387e91b90f1900bedf88bc92d7929ccfc"
+      },
+      "gpu_device": "Quadro RTX 5000, 572.60",
+      "decode_source_sha256": "f7e4be357b566f2fbf475c12197fe8f3eec97fa531c29919c28a7c93adf9215f",
+      "source_sha256": {
+        "run_expanded.py": "dbf5a3fbe457324ba3350565df241c12af6f6880416d70266b926f3fc76f0a99",
+        "run_manifest.py": "58fe2e19bab34ca52e4319f9c56a20a5769fe98e12207edd4c6f6f366b31c9b2",
+        "compare_api.py": "023c8bac70ded3161de3d22bcabfb42ba9ac136ce4d0f726e5978254573f5fa0",
+        "metrics.py": "8312183c7ccc9705af4fbeaf2a2db1dddc5613d999117e40e39c5ffed7d77ad3"
+      }
+    }
+  },
+  "completion_evidence": {
+    "qwen": {
+      "status": "complete",
+      "manifest_sha256": "f2e2310db7318d4e21d65ea3b52384db7ed34bee9e1dc2a6d92562c61feb087e",
+      "accuracy_samples": 1800,
+      "latency_samples": 120,
+      "finished_at": "2026-11-17T16:45:01.006855+00:00"
+    },
+    "gpt": {
+      "status": "complete",
+      "manifest_sha256": "f2e2310db7318d4e21d65ea3b52384db7ed34bee9e1dc2a6d92562c61feb087e",
+      "accuracy_samples": 1800,
+      "latency_samples": 120,
+      "finished_at": "2026-11-17T16:04:06.859939+00:00"
+    },
+    "post_qwen_audio_hashes_verified": 1800,
+    "analysis_python": "3.11.14",
+    "qwen_asr_package": "0.0.6",
+    "qwen_json_assets_sha256": {
+      "chat_template.json": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+      "config.json": "2e74a751548b8ad7d7526d29365ad8144c345d8b412b1152d25dc6698452712f",
+      "generation_config.json": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+      "model.safetensors.index.json": "f994739fe38e5210b9e3e8ce6c6307315e2ceac3cb630e7b7414d69dce520f60",
+      "preprocessor_config.json": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+      "tokenizer_config.json": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "runtime_closeout": {
+    "checked_at": "2026-11-17T16:48:24.129922+00:00",
+    "own_model_exit_code": 0,
+    "own_watcher_exit_code": 0,
+    "slot_available_observation": true,
+    "gpu_1_memory_used_mib": 524,
+    "preexisting_stt_services_active": true,
+    "temporary_drive_and_local_cipher_files_removed": 19,
+    "temporary_drive_folder_removed": true,
+    "transfer_private_key_and_url_plan_removed": true,
+    "pending_receipts": 0
+  }
+}

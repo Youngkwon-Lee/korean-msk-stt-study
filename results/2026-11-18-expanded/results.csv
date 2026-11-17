@@ -1,0 +1,3 @@
+model,samples,edit_errors,reference_characters,cer,exact_sentences,literal_term_errors,literal_term_occurrences,technical_failures,serial_timing_samples,serial_median_seconds,serial_p95_seconds,timing_scope
+GPT-Transcribe,1800,744,26065,0.028544024553999615,1391,33,699,0,120,0.961468583000169,1.3743610000001354,HTTP roundtrip
+Qwen3-ASR-1.7B,1800,658,26065,0.025244580855553426,1409,18,699,0,120,2.8081766369869,4.164419817039743,local decode plus inference; not HTTP
