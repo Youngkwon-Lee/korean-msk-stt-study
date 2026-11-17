@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-11-17T15:19:02.946885+00:00",
+  "audio_files": 3735,
+  "reference_files": 3735,
+  "paired_files": 3735,
+  "unpaired_audio": 0,
+  "unpaired_references": 0,
+  "empty_normalized_references": 0,
+  "source_strata": 6,
+  "verified_unique_speakers": null,
+  "selected_samples": 1800,
+  "selected_audio_bytes": 624253680,
+  "selected_unique_text_groups": 1135,
+  "latency_substudy_samples": 120,
+  "reference_review_substudy_samples": 300,
+  "selection_seed": 20261117,
+  "run_ready_audio_hashes": false,
+  "reference_hash_scope": "canonical stripped UTF-8 text; not original label file bytes",
+  "selection": "source-code-stratified utterance holdout; all normalized development references excluded",
+  "inference_scope": "observed public corpus only; speaker identity and clinical representativeness unverified",
+  "by_source_stratum": [
+    {
+      "source_stratum": "C01",
+      "role_label": "staff",
+      "paired_candidates": 475,
+      "development_or_same_text_excluded": 16,
+      "within_stratum_duplicate_text_excluded": 0,
+      "eligible_unique_texts": 459,
+      "selected": 300
+    },
+    {
+      "source_stratum": "C02",
+      "role_label": "staff",
+      "paired_candidates": 485,
+      "development_or_same_text_excluded": 14,
+      "within_stratum_duplicate_text_excluded": 0,
+      "eligible_unique_texts": 471,
+      "selected": 300
+    },
+    {
+      "source_stratum": "C03",
+      "role_label": "staff",
+      "paired_candidates": 1002,
+      "development_or_same_text_excluded": 20,
+      "within_stratum_duplicate_text_excluded": 7,
+      "eligible_unique_texts": 975,
+      "selected": 300
+    },
+    {
+      "source_stratum": "C04",
+      "role_label": "staff",
+      "paired_candidates": 997,
+      "development_or_same_text_excluded": 18,
+      "within_stratum_duplicate_text_excluded": 1,
+      "eligible_unique_texts": 978,
+      "selected": 300
+    },
+    {
+      "source_stratum": "C05",
+      "role_label": "patient",
+      "paired_candidates": 391,
+      "development_or_same_text_excluded": 11,
+      "within_stratum_duplicate_text_excluded": 0,
+      "eligible_unique_texts": 380,
+      "selected": 300
+    },
+    {
+      "source_stratum": "C06",
+      "role_label": "patient",
+      "paired_candidates": 385,
+      "development_or_same_text_excluded": 11,
+      "within_stratum_duplicate_text_excluded": 0,
+      "eligible_unique_texts": 374,
+      "selected": 300
+    }
+  ],
+  "manifest_sha256": "dcfdcac189d11835d0ed28efbf6be3edaeb755a8d321d7b84712ef6b2758b624",
+  "status": "selection fixed; audio bytes not yet sealed; expanded inference NOT started",
+  "source_sha256": {
+    "prepare_corpus.py": "1f66a459127450e5c86866a84886bde9acd12f4c28c708dfafd1b61af43f24e4"
+  }
+}

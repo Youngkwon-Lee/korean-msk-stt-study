@@ -6,6 +6,7 @@
 
 ## 연구자료
 
+- [논문 규모 확장 계획 v0.2](docs/publication-plan-v0.2.md): 기관·상담 자료 미확보 조건에서 공개 코퍼스 기술 평가와 후속 실제 상담 연구를 구분한 계획. **3,735쌍 점검·1,800문장 선택 고정 완료 / 확대 모델 실행 전**이며, 화자 수는 미상입니다. [준비 집계](results/2026-11-18-preparation/README.md).
 - [연구계획서 v0.1](docs/protocol.md): 선행연구, 차별점, 대응 비교 설계, 평가·분석, 표본 수 산출 계획.
 - [참여자 설명문](docs/forms/participant_information.md): 환자와 참여 치료사에게 설명할 초안.
 - [연구 참여·녹음·자료 이용 동의서](docs/forms/recording_consent.md): 환자·치료사가 각각 작성하며 건강정보 동의는 별도로 구분합니다.
@@ -44,6 +45,8 @@
 [2026-11-17 동일 원음 36쌍 결과](results/2026-11-17-api-comparison/README.md): Qwen3-ASR 1.7B는 **CER 1.19%(6/504자), 지정 의료 용어 표기 오류 0/37**, OpenAI `whisper-1` API는 **CER 3.17%(16/504자), 용어 오류 5/37**이었습니다. API 값은 자체 호스팅 Whisper turbo 결과와 구분합니다. 원음의 외부 API 이용 허용을 확인한 뒤 실행했습니다. 용어 점수는 이번 출력 전에 고정한 25개 유형의 문자 보존 평가이며 임상 의미 오류 전체나 안전성을 입증하지 않습니다.
 
 ## 비교 코드
+
+[확대 비교 실행 방법](docs/expanded-benchmark-method.md): 표본 선택 → 동일 선택의 음성 바이트 검증 → 항목별 재개 가능한 직렬 실행 → 대응 집계. 확대 표본의 실제 모델 추론은 아직 시작하지 않았습니다.
 
 [사용법과 방법 차이](docs/benchmark-method.md)를 먼저 읽으세요. 기존의 별도 모델별 환경과 로컬 가중치를 사용하며 자동 설치·모델 다운로드를 하지 않습니다. 기존 오프라인 비교는 API를 호출하지 않으며, 새 `scripts/compare_api.py`의 OpenAI 실행(`gpt-transcribe` 또는 `whisper-1`)은 외부 음성 이용 승인 플래그와 승인된 프로세스 키가 명시된 경우에만 유료 API를 호출합니다. 허용된 자체 자료에 대해서만 실행합니다. 단일 조건은 `scripts/benchmark.py`, 기존 GPU 잠금을 사용하는 순차 실행은 `scripts/run_suite.py`를 사용합니다. 새 실행 결과는 `private-runs/`에 두고 공개할 집계는 별도로 검토합니다.
 
