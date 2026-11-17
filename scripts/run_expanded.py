@@ -26,6 +26,20 @@ def receipt_path(out, row):
     return Path(out)/(hashlib.sha256(row['sample_id'].encode()).hexdigest()+'.json')
 
 
+def transcribe_chunks(paths, decode, infer, chunk_samples=30*16000):
+    segments, owners = [], []
+    for number, path in enumerate(paths):
+        audio = decode(path,180)
+        for start in range(0,len(audio),chunk_samples):
+            segments.append((audio[start:start+chunk_samples],16000));owners.append(number)
+    values=infer(segments)
+    if len(values)!=len(segments):raise ValueError('Segment result cardinality mismatch')
+    grouped=[[] for _ in paths]
+    for owner,text in zip(owners,values):
+        if text.strip():grouped[owner].append(text.strip())
+    return [' '.join(parts) for parts in grouped]
+
+
 def pending_rows(rows, out, config):
     out=Path(out);out.mkdir(mode=0o700,parents=True,exist_ok=True)
     receipt=out/'run.json'
@@ -126,7 +140,6 @@ def main():
         local=Path(args.audio_root)/(row['sample_id']+'.wav')
         if digest(local)!=row['audio_sha256']:p.error('Input bytes differ')
         row['audio_path']=str(local)
-        if row['audio_seconds']>30:p.error('Longer clip requires predeclared chunking')
     latency=[r for r in rows if r['latency_substudy']]
     out=Path(args.private_out);out.mkdir(mode=0o700,parents=True,exist_ok=True)
     config={'schema':'manifest-run/v1','manifest_sha256':args.expected_manifest_sha256,
@@ -163,12 +176,13 @@ def main():
                 with torch.inference_mode():model.transcribe(audio=(np.zeros(32000,dtype=np.float32),16000),language='Korean')
                 torch.cuda.synchronize()
                 def transcribe_batch(paths):
-                    audio=[(decode(path,180),16000) for path in paths]
-                    with torch.inference_mode():values=model.transcribe(audio=audio,language='Korean')
-                    torch.cuda.synchronize()
-                    return [r.text.strip() for r in values]
+                    def infer(audio):
+                        with torch.inference_mode():values=model.transcribe(audio=audio,language='Korean')
+                        torch.cuda.synchronize()
+                        return [r.text for r in values]
+                    return transcribe_chunks(paths,decode,infer)
                 config.update(accuracy_batch_size=args.batch_size,precision='float16',attention='eager',
-                    max_new_tokens=1024,language='Korean',model_load_seconds=load_seconds,
+                    max_new_tokens=1024,language='Korean',chunk_seconds=30,model_load_seconds=load_seconds,
                     package_versions={n:__import__(n).__version__ for n in ('torch','transformers','numpy','av')},
                     model_file_sha256={f.name:digest(f) for f in sorted(Path(args.qwen_model).iterdir())
                         if f.is_file() and (f.suffix=='.safetensors' or f.name=='config.json')},

@@ -8,10 +8,19 @@ import tempfile
 import unittest
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from run_expanded import phase_api, phase_batches, receipt_path
+from run_expanded import phase_api, phase_batches, receipt_path, transcribe_chunks
 
 
 class ExpandedExecutionTests(unittest.TestCase):
+    def test_long_clip_segments_rejoin_in_original_utterance_order(self):
+        paths=['long','short']
+        def decode(path,limit):return list(range(7 if path=='long' else 2))
+        def infer(segments):
+            self.assertEqual([len(audio) for audio,sr in segments],[3,3,1,2])
+            self.assertTrue(all(sr==16000 for audio,sr in segments))
+            return [' first ','',' last ',' second ']
+        self.assertEqual(transcribe_chunks(paths,decode,infer,3),['first last','second'])
+
     def test_parallel_api_checkpoints_each_sample_and_resume_does_not_recall(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);out=root/'run';rows=[];calls=[]
