@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-11-17T07:35:11.628450+00:00",
+  "raw_input_files_removed": 72,
+  "raw_input_directory_absent": true,
+  "individual_results_removed": true,
+  "private_keys_and_state_removed": true,
+  "test_port_closed": true,
+  "own_model_absent": true,
+  "gpu_lease_available": true,
+  "remaining_jobs": 0,
+  "production_user_services": [
+    "active",
+    "active"
+  ],
+  "gpu_after": [
+    "0, 4346, 0",
+    "1, 524, 0"
+  ],
+  "retained": "Isolated source, reviewed aggregates and execution proof; pre-existing runtimes reused",
+  "local_input_files_removed": 72,
+  "local_input_directory_absent": true,
+  "local_individual_outputs_removed": true
+}

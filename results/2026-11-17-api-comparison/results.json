@@ -1,0 +1,163 @@
+{
+  "status": "complete",
+  "scope": "exploratory paired accuracy comparison; user confirmed external API use of original samples",
+  "input_identical_to_2026_11_16": true,
+  "sample_pairs": 36,
+  "reference_characters": 504,
+  "audio_seconds": 149.04,
+  "normalization": "historical normalize: Korean syllables, Latin letters and digits; spaces/punctuation omitted",
+  "annotation_scope": "25 literal term types, 37 occurrences in 29 sentences; fixed before current outputs, not blinded to historical results",
+  "models": [
+    {
+      "model": "Qwen3-ASR-1.7B",
+      "cer": 0.011904761904761904,
+      "cer_by_group": {
+        "patient": 0.020833333333333332,
+        "staff": 0.00641025641025641
+      },
+      "exact_sentences": 32,
+      "sentences": 36,
+      "edit_errors": 6,
+      "reference_characters": 504,
+      "medical_terms": {
+        "definition": "aligned exact literal term preservation; no semantic or severity adjudication",
+        "term_occurrences": 37,
+        "term_errors": 0,
+        "term_error_rate": 0,
+        "sentences_with_term_error": 0,
+        "by_category": {
+          "body_part": {
+            "occurrences": 9,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "disease": {
+            "occurrences": 10,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "history": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "injury": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "measurement": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "symptom": {
+            "occurrences": 9,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "test": {
+            "occurrences": 1,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "treatment": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0
+          }
+        }
+      },
+      "provider": "qwen-service",
+      "checked_at": "2026-11-17T06:12:29.060337+00:00",
+      "audio_seconds": 149.03999999999996,
+      "http_total_seconds": 253.97483071900206,
+      "input_sha256": "80f76331e35ae2fe611654af70e3adfc55f73c1d9a1e7316dffcdaa043f16ed3",
+      "annotation_sha256": "481fa3cb1fbc6cd769012e00fad300084966fa78579fdff7a25974620be890b7",
+      "source_sha256": {
+        "compare_api.py": "ecb2ef3f0e8ce95e35f4543486355639a4066cab62baff32e7a113aed047ebe9",
+        "clinical_terms.py": "72fbb502ef4b50e29756df53ed551984f496cfafb4b247362e85cf8de7a7db4c",
+        "metrics.py": "8312183c7ccc9705af4fbeaf2a2db1dddc5613d999117e40e39c5ffed7d77ad3"
+      }
+    },
+    {
+      "model": "OpenAI whisper-1",
+      "cer": 0.031746031746031744,
+      "cer_by_group": {
+        "patient": 0.052083333333333336,
+        "staff": 0.019230769230769232
+      },
+      "exact_sentences": 25,
+      "sentences": 36,
+      "edit_errors": 16,
+      "reference_characters": 504,
+      "medical_terms": {
+        "definition": "aligned exact literal term preservation; no semantic or severity adjudication",
+        "term_occurrences": 37,
+        "term_errors": 5,
+        "term_error_rate": 0.13513513513513514,
+        "sentences_with_term_error": 4,
+        "by_category": {
+          "body_part": {
+            "occurrences": 9,
+            "errors": 0,
+            "error_rate": 0.0
+          },
+          "disease": {
+            "occurrences": 10,
+            "errors": 1,
+            "error_rate": 0.1
+          },
+          "history": {
+            "occurrences": 2,
+            "errors": 1,
+            "error_rate": 0.5
+          },
+          "injury": {
+            "occurrences": 2,
+            "errors": 1,
+            "error_rate": 0.5
+          },
+          "measurement": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0.0
+          },
+          "symptom": {
+            "occurrences": 9,
+            "errors": 2,
+            "error_rate": 0.2222222222222222
+          },
+          "test": {
+            "occurrences": 1,
+            "errors": 0,
+            "error_rate": 0.0
+          },
+          "treatment": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0.0
+          }
+        }
+      },
+      "provider": "whisper-1",
+      "checked_at": "2026-11-17T06:07:59.604224+00:00",
+      "audio_seconds": 149.04,
+      "http_total_seconds": 61.80138070898829,
+      "input_sha256": "80f76331e35ae2fe611654af70e3adfc55f73c1d9a1e7316dffcdaa043f16ed3",
+      "annotation_sha256": "481fa3cb1fbc6cd769012e00fad300084966fa78579fdff7a25974620be890b7",
+      "source_sha256": {
+        "compare_api.py": "ecb2ef3f0e8ce95e35f4543486355639a4066cab62baff32e7a113aed047ebe9",
+        "clinical_terms.py": "72fbb502ef4b50e29756df53ed551984f496cfafb4b247362e85cf8de7a7db4c",
+        "metrics.py": "8312183c7ccc9705af4fbeaf2a2db1dddc5613d999117e40e39c5ffed7d77ad3"
+      },
+      "api_settings": {
+        "model": "whisper-1",
+        "language": "ko",
+        "temperature": 0,
+        "prompt": null,
+        "automatic_retries": 0
+      }
+    }
+  ]
+}
