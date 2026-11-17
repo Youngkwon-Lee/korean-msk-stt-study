@@ -1,0 +1,198 @@
+{
+  "status": "complete",
+  "scope": "same paired 36 samples; gpt-transcribe vs resident Qwen, no patient collection or live app activation",
+  "sample_pairs": 36,
+  "reference_characters": 504,
+  "audio_seconds": 149.04,
+  "input_identical_to_previous_runs": true,
+  "term_annotation_unchanged": true,
+  "models": [
+    {
+      "model": "gpt-transcribe",
+      "cer": 0.011904761904761904,
+      "cer_by_group": {
+        "patient": 0.010416666666666666,
+        "staff": 0.01282051282051282
+      },
+      "exact_sentences": 32,
+      "sentences": 36,
+      "edit_errors": 6,
+      "reference_characters": 504,
+      "medical_terms": {
+        "definition": "aligned exact literal term preservation; no semantic or severity adjudication",
+        "term_occurrences": 37,
+        "term_errors": 2,
+        "term_error_rate": 0.05405405405405406,
+        "sentences_with_term_error": 1,
+        "by_category": {
+          "body_part": {
+            "occurrences": 9,
+            "errors": 0,
+            "error_rate": 0.0
+          },
+          "disease": {
+            "occurrences": 10,
+            "errors": 1,
+            "error_rate": 0.1
+          },
+          "history": {
+            "occurrences": 2,
+            "errors": 1,
+            "error_rate": 0.5
+          },
+          "injury": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0.0
+          },
+          "measurement": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0.0
+          },
+          "symptom": {
+            "occurrences": 9,
+            "errors": 0,
+            "error_rate": 0.0
+          },
+          "test": {
+            "occurrences": 1,
+            "errors": 0,
+            "error_rate": 0.0
+          },
+          "treatment": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0.0
+          }
+        }
+      },
+      "provider": "gpt-transcribe",
+      "checked_at": "2026-11-17T13:53:47.593234+00:00",
+      "audio_seconds": 149.04,
+      "http_total_seconds": 46.877888042000905,
+      "wall_run_seconds": 46.92403566599978,
+      "input_sha256": "80f76331e35ae2fe611654af70e3adfc55f73c1d9a1e7316dffcdaa043f16ed3",
+      "latency": {
+        "requests": 36,
+        "total_seconds": 46.877888042000905,
+        "median_seconds": 1.0737271665000208,
+        "p95_seconds": 2.572453457999927,
+        "p95_method": "nearest rank",
+        "min_seconds": 0.7020044169998982,
+        "max_seconds": 2.7404445000001942
+      },
+      "warmup_excluded": false,
+      "warmup_seconds": null,
+      "annotation_sha256": "481fa3cb1fbc6cd769012e00fad300084966fa78579fdff7a25974620be890b7",
+      "source_sha256": {
+        "compare_api.py": "023c8bac70ded3161de3d22bcabfb42ba9ac136ce4d0f726e5978254573f5fa0",
+        "clinical_terms.py": "72fbb502ef4b50e29756df53ed551984f496cfafb4b247362e85cf8de7a7db4c",
+        "metrics.py": "8312183c7ccc9705af4fbeaf2a2db1dddc5613d999117e40e39c5ffed7d77ad3"
+      },
+      "api_settings": {
+        "model": "gpt-transcribe",
+        "languages[]": "ko",
+        "response_format": "json",
+        "prompt": null,
+        "keywords": null,
+        "automatic_retries": 0
+      },
+      "returned_model_labels": []
+    },
+    {
+      "model": "Qwen3-ASR-1.7B",
+      "cer": 0.011904761904761904,
+      "cer_by_group": {
+        "patient": 0.020833333333333332,
+        "staff": 0.00641025641025641
+      },
+      "exact_sentences": 32,
+      "sentences": 36,
+      "edit_errors": 6,
+      "reference_characters": 504,
+      "medical_terms": {
+        "definition": "aligned exact literal term preservation; no semantic or severity adjudication",
+        "term_occurrences": 37,
+        "term_errors": 0,
+        "term_error_rate": 0,
+        "sentences_with_term_error": 0,
+        "by_category": {
+          "body_part": {
+            "occurrences": 9,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "disease": {
+            "occurrences": 10,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "history": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "injury": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "measurement": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "symptom": {
+            "occurrences": 9,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "test": {
+            "occurrences": 1,
+            "errors": 0,
+            "error_rate": 0
+          },
+          "treatment": {
+            "occurrences": 2,
+            "errors": 0,
+            "error_rate": 0
+          }
+        }
+      },
+      "provider": "qwen-service",
+      "checked_at": "2026-11-17T13:56:52.921157+00:00",
+      "audio_seconds": 149.03999999999996,
+      "http_total_seconds": 114.70607363589806,
+      "wall_run_seconds": 114.82159310596762,
+      "input_sha256": "80f76331e35ae2fe611654af70e3adfc55f73c1d9a1e7316dffcdaa043f16ed3",
+      "latency": {
+        "requests": 36,
+        "total_seconds": 114.70607363589806,
+        "median_seconds": 2.998002762993565,
+        "p95_seconds": 4.550274727982469,
+        "p95_method": "nearest rank",
+        "min_seconds": 2.426689183979761,
+        "max_seconds": 4.68420471099671
+      },
+      "warmup_excluded": true,
+      "warmup_seconds": 75.3893860069802,
+      "annotation_sha256": "481fa3cb1fbc6cd769012e00fad300084966fa78579fdff7a25974620be890b7",
+      "source_sha256": {
+        "compare_api.py": "023c8bac70ded3161de3d22bcabfb42ba9ac136ce4d0f726e5978254573f5fa0",
+        "clinical_terms.py": "72fbb502ef4b50e29756df53ed551984f496cfafb4b247362e85cf8de7a7db4c",
+        "metrics.py": "8312183c7ccc9705af4fbeaf2a2db1dddc5613d999117e40e39c5ffed7d77ad3"
+      },
+      "engine_processing": {
+        "requests": 36,
+        "total_seconds": 69.11927503003972,
+        "median_seconds": 1.6849551120249089,
+        "p95_seconds": 3.3088590130209923,
+        "p95_method": "nearest rank",
+        "min_seconds": 1.0409737390000373,
+        "max_seconds": 3.32313322101254
+      }
+    }
+  ],
+  "timing_limits": "GPT measured Mac-to-OpenAI HTTPS; Qwen measured ICT loopback HTTP after separate warmup; not pure model-compute comparison"
+}

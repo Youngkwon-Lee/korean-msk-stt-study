@@ -1,0 +1,3 @@
+model,sentences,reference_characters,edit_errors,cer,exact_sentences,term_occurrences,term_errors,term_error_rate,http_total_seconds,http_median_seconds,http_p95_seconds,warmup_excluded
+gpt-transcribe,36,504,6,0.011904761904761904,32,37,2,0.05405405405405406,46.877888042000905,1.0737271665000208,2.572453457999927,False
+Qwen3-ASR-1.7B,36,504,6,0.011904761904761904,32,37,0,0,114.70607363589806,2.998002762993565,4.550274727982469,True

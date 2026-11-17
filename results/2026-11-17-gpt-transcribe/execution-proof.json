@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-11-17T13:55:32.139039+00:00",
+  "scope": "user-authorized same 36 samples; one warmup excluded; no live app activation",
+  "service_source_sha256": {
+    "kinelo_stt/__init__.py": "159f9673665fd5d269634a08e3155cc48f98c8a5f8512529730da02970619e81",
+    "kinelo_stt/__main__.py": "aa35725b6cac8e28725ccb6c3a3c7607a7272d99040a277b1ac83409da78b25c",
+    "kinelo_stt/api.py": "761d2a2b81646e084136a05dccf00da1e8be5f1f634a0b444f74f9e90cb74cce",
+    "kinelo_stt/audio_url.py": "69e62282eaa83cab4dd97ede3e09c8448c4d4cbdfb7baed85fc80533a1f3b4d0",
+    "kinelo_stt/config.py": "fdb627d2ed3a2bbf0529a02352e3da302cfec5528ffdb2c089e3614499026612",
+    "kinelo_stt/crypto.py": "b13c8f259f5e9bff2bd0e995d621b95c863616aaf6cbc798daeeb4851ccafb6e",
+    "kinelo_stt/inference.py": "f7e4be357b566f2fbf475c12197fe8f3eec97fa531c29919c28a7c93adf9215f",
+    "kinelo_stt/resident.py": "79c11be0fa07dd645e61eebb7cf453910aedb895c59b8dc74e373df15b12afdb",
+    "kinelo_stt/store.py": "b5a4566a11bffbd0518fd4c06c1c95631dbbc0a54a3ebc36374bf97e25e678c0",
+    "kinelo_stt/worker.py": "741d844a17fcdc1732673a247dd1fa60554bce508cf0a6ca72f47cd5155c49e8",
+    "clients/__init__.py": "1539e5ad1960ca9ced1b592c0590b1d57292cc792cdb6063ad17e8e1350789cf",
+    "clients/incremental.py": "7720b5a8eae9c2104084d4d6c8077c4927a2e26710cfad4e8f450dcbb1b96da1",
+    "clients/physio_queue.py": "553644d4b3f5acfde669eb043154fe28387ac8f131078faa3dcf485840d1556b",
+    "clients/python_client.py": "8790a6c89917b5a7cda63e869e2757ea5238ffe5c39bb33e16f8ef4aae3e8697"
+  },
+  "gpu_before": "524, 0",
+  "model_load_seconds": 66.05144223803654,
+  "lease_held_while_resident": true,
+  "api_returncode": -15,
+  "gpu_lease_released": true,
+  "test_port_closed": true,
+  "gpu_after": "524, 2",
+  "runtime": {
+    "python": "3.11.14",
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "transformers": "4.57.6",
+      "qwen-asr": "0.0.6",
+      "numpy": "2.4.6",
+      "av": "18.1.0"
+    }
+  },
+  "source_service_commit": "18cee5a041d4c10c20b863b6e86d1ab6d9086053"
+}
