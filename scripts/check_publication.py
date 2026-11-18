@@ -6,7 +6,8 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 BLOCKED_EXTENSIONS = {".wav", ".mp3", ".m4a", ".mp4", ".webm", ".flac", ".ogg",
-                      ".nemo", ".safetensors", ".bin", ".pt", ".pth", ".pem", ".key", ".jsonl"}
+                      ".nemo", ".safetensors", ".bin", ".pt", ".pth", ".pem", ".key", ".jsonl",
+                      ".sqlite3", ".sqlite3-wal", ".sqlite3-shm"}
 PATTERNS = {
     "private workspace path": r"/(?:Users|home)/[A-Za-z0-9]",
     "private Drive/operations link": r"https://(?:drive\.google\.com|docs\.google\.com|ops\.kinelo\.co\.kr)/",

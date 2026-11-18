@@ -8,6 +8,7 @@
 
 ## 연구자료
 
+- [300건 원음 기반 정답 검토 도구](docs/reference-review.md): 원음 재생·제공 정답 확인·수정·초안 자동 저장·완료/보류·재진입·검토자별 이력을 제공하는 로컬 도구입니다. 모델 출력과 다른 검토자의 결과를 제공하지 않으며 실제 300건의 임상 판정은 자동으로 채우지 않습니다.
 - [논문 규모 확장 계획 v0.2](docs/publication-plan-v0.2.md): 공개 코퍼스 기술 평가와 후속 실제 상담 연구를 구분한 계획. [출력 확인 전 실행 변경 v0.2a](docs/execution-amendment-v0.2a.md), [초기 준비 집계](results/2026-11-18-preparation/README.md), [실제 확대 결과](results/2026-11-18-expanded/README.md)를 구분해 보존합니다.
 - [연구계획서 v0.1](docs/protocol.md): 선행연구, 차별점, 대응 비교 설계, 평가·분석, 표본 수 산출 계획.
 - [참여자 설명문](docs/forms/participant_information.md): 환자와 참여 치료사에게 설명할 초안.

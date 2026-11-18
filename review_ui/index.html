@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>음성 정답 검토</title><link rel="stylesheet" href="/assets/review.css"><script src="/assets/review.js" defer></script></head>
+<body>
+<header class="topbar"><div><p class="eyebrow">REFERENCE REVIEW</p><h1>음성 정답 검토</h1></div><div class="session"><span id="reviewer">검토 준비 중</span><div class="progress-line"><label id="progress-label" for="progress">0 / 300 완료</label><progress id="progress" value="0" max="300"></progress></div></div><button id="export" class="quiet" disabled>기록 내보내기</button></header>
+<div id="error" class="error" role="alert" hidden></div>
+<div class="workspace">
+<aside class="queue-panel"><button id="queue-toggle" class="quiet mobile-only" aria-expanded="false" aria-controls="queue-content">검토 목록 열기</button><div id="queue-content"><div class="queue-heading"><h2>검토 목록</h2><label class="sr-only" for="filter">검토 상태 필터</label><select id="filter"><option value="all">전체</option><option value="pending">미완료</option><option value="reviewed">완료</option><option value="flagged">보류</option></select></div><nav id="queue" aria-label="검토 항목"></nav></div></aside>
+<main id="editor" aria-busy="true"><div class="item-heading"><div><p class="eyebrow" id="position">원음과 제공 정답으로 검토합니다</p><h2 id="item-title">항목 불러오는 중</h2></div><span id="item-status" class="badge">준비 중</span></div>
+<section class="audio-section" aria-labelledby="audio-title"><div class="section-title"><h3 id="audio-title">원음 듣기</h3><span id="duration"></span></div><audio id="audio" controls preload="metadata"></audio><div class="audio-tools"><button id="replay" class="text-button">처음부터 재생</button><label for="rate">재생 속도</label><select id="rate"><option value="0.75">0.75배</option><option value="1" selected>1배</option><option value="1.25">1.25배</option><option value="1.5">1.5배</option></select></div></section>
+<section class="provided" aria-labelledby="source-title"><h3 id="source-title">제공 정답</h3><p id="reference"></p></section>
+<section class="transcript-section"><div class="section-title"><label for="transcript">검토 정답</label><span class="hint">음성과 다른 부분을 수정해 주세요</span></div><textarea id="transcript" rows="5" maxlength="16000" spellcheck="false" autocomplete="off" disabled></textarea><div class="save-status"><span id="save-state" role="status" aria-live="polite">저장 내용 확인 중</span><button id="reload" class="text-button" hidden>저장된 내용 불러오기</button></div></section>
+<label class="listened"><input id="heard" type="checkbox" disabled><span>음성을 듣고 정답을 확인했습니다</span></label>
+<details id="notes-details"><summary>메모 · 판독이 어려운 항목</summary><label for="notes">수정 근거나 보류 사유</label><textarea id="notes" rows="2" maxlength="2000" spellcheck="false" autocomplete="off" placeholder="확실하지 않은 표현이나 확인할 점을 남겨 주세요"></textarea><button id="flag" class="quiet">보류로 저장하고 다음</button></details>
+<footer class="actions"><div class="navigation"><button id="previous" class="quiet" disabled>이전</button><button id="next" class="quiet" disabled>다음</button></div><div class="primary-action"><span class="hint">⌘ / Ctrl + Enter</span><button id="complete" class="primary" disabled>저장하고 다음</button></div></footer>
+<p class="privacy">모델 출력은 표시하지 않습니다. 수정 내용은 제공 정답과 분리해 이력으로 저장됩니다.</p>
+</main></div>
+</body></html>
