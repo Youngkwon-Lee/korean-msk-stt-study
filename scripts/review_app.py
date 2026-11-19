@@ -328,7 +328,7 @@ def main():
     for name in ('manifest', 'expected-manifest-sha256', 'audio-root', 'db'):
         parser.add_argument('--' + name, required=True)
     parser.add_argument('--reviewer', default='reviewer-1')
-    parser.add_argument('--port', type=int, default=8766)
+    parser.add_argument('--port', type=int, default=8767)
     parser.add_argument('--allowed-host', default='stt-review.localhost')
     parser.add_argument('--expected-count', type=int, default=300)
     args = parser.parse_args(); os.umask(0o077)
