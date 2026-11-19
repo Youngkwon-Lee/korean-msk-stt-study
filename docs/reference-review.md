@@ -11,11 +11,11 @@ python3 -B scripts/review_app.py \
   --manifest /path/to/private/run-ready-manifest.json \
   --expected-manifest-sha256 EXPECTED_SHA256 \
   --audio-root /path/to/private/selected-audio \
-  --db private-runs/reference-review/reviews.sqlite3 \
-  --reviewer reviewer-1 --port 8766 --allowed-host stt-review.localhost
+  --db private-runs/reference-review-300/reviews.sqlite3 \
+  --reviewer reviewer-1 --port 8767 --allowed-host stt-review.localhost
 ```
 
-`aside-local stt-review 8766 --url-only`로 분리된 로컬 주소를 확인한 뒤 Aside에서 연다. 서버는 `127.0.0.1`에만 바인딩하며 다른 앱의 포트가 사용 중이면 시작하지 않는다. 종료는 실행 터미널에서 Ctrl+C다. 같은 명세·DB·검토자 ID로 다시 시작하면 저장 내역이 복원된다.
+`aside-local stt-review 8767 --url-only`로 분리된 로컬 주소를 확인한 뒤 Aside에서 연다. 서버는 `127.0.0.1`에만 바인딩하며 다른 앱의 포트가 사용 중이면 시작하지 않는다. 종료는 실행 터미널에서 Ctrl+C다. 같은 명세·DB·검토자 ID로 다시 시작하면 저장 내역이 복원된다. 기존 8766 포트는 다른 로컬 서비스나 SSH 터널이 점유할 수 있으므로 해당 프로세스를 종료하지 않고 별도 포트(기본값 8767)를 사용한다. 재시작 시 브라우저 주소와 `--port`를 일치시키고, `/api/session`이 이 검토 도구의 응답인지 확인한 뒤 원음 재생을 검증한다.
 
 ## 검토 흐름
 
